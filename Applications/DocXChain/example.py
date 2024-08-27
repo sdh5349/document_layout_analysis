@@ -62,15 +62,15 @@ def table_parsing_example(image):
     table_structure_recognition_configs['model_path'] = 'damo/cv_dla34_table-structure-recognition_cycle-centernet'
     configs['table_structure_recognition_configs'] = table_structure_recognition_configs
     
-    text_detection_configs = dict()
-    text_detection_configs['from_modelscope_flag'] = True
-    text_detection_configs['model_path'] = 'damo/cv_resnet18_ocr-detection-line-level_damo'
-    configs['text_detection_configs'] = text_detection_configs
+    # text_detection_configs = dict()
+    # text_detection_configs['from_modelscope_flag'] = True
+    # text_detection_configs['model_path'] = 'damo/cv_resnet18_ocr-detection-line-level_damo'
+    # configs['text_detection_configs'] = text_detection_configs
 
-    text_recognition_configs = dict()
-    text_recognition_configs['from_modelscope_flag'] = True
-    text_recognition_configs['model_path'] = 'damo/cv_convnextTiny_ocr-recognition-general_damo'  # alternatives: 'damo/cv_convnextTiny_ocr-recognition-scene_damo', 'damo/cv_convnextTiny_ocr-recognition-document_damo', 'damo/cv_convnextTiny_ocr-recognition-handwritten_damo' 
-    configs['text_recognition_configs'] = text_recognition_configs
+    # text_recognition_configs = dict()
+    # text_recognition_configs['from_modelscope_flag'] = True
+    # text_recognition_configs['model_path'] = 'damo/cv_convnextTiny_ocr-recognition-general_damo'  # alternatives: 'damo/cv_convnextTiny_ocr-recognition-scene_damo', 'damo/cv_convnextTiny_ocr-recognition-document_damo', 'damo/cv_convnextTiny_ocr-recognition-handwritten_damo' 
+    # configs['text_recognition_configs'] = text_recognition_configs
 
     # initialize
     table_parser = TableParsing(configs)
@@ -261,20 +261,10 @@ def pdf2html(image_list, pdf_path):
         page = pdf.load_page(page_num)
         html_output, output = document_structurizer(image, page)
         print(html_output)
-
-        # page_info = {'page': page_num, 'information': result}
-        # final_result.append(page_info)
         break
-    # final_result = result
-    if True:
-        # print (final_result)
-        pass
     output_image = document_structurization_visualization(output, image)
     # release
     document_structurizer.release()
-    # visualize
-    # output_image = []
-
 
     return html_output, output_image
 
