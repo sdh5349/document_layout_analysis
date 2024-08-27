@@ -12,7 +12,7 @@ https://github.com/AlibabaResearch/AdvancedLiterateMachinery 레포를 이용
 
 - Sample
 
-![sample](./images/your-image.png)
+![sample](https://github.com/sdh5349/document_layout_analysis/blob/main/images/1.png)
 
 
 
